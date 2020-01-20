@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jarvis.demo.mapper.CityMapper">
+    <resultMap id="city" type="com.jarvis.demo.model.entity.City">
+        <result column="ID" property="id"/>
+        <result column="Name" property="name"/>
+        <result column="CountryCode" property="countryCode"/>
+        <result column="Population" property="population"/>
+    </resultMap>
+
+    <select id="getCity" resultMap="city">
+        select * from city where ID = #{cityId}
+    </select>
+
+</mapper>
